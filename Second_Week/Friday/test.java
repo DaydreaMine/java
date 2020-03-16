@@ -11,7 +11,7 @@
  *
  *
 一、选择题
-1.下面哪些是合法的变量名? (E )
+1.下面哪些是合法的变量名? (E G D)
  A．2variable              
  B. ．variable2    
   C. ．_whatavariable
@@ -22,18 +22,18 @@
 2.请问 “abcd” instanceof Object返回的值是? (B)
 A. “abcd”  B. true   C. false  D. String 
 
-3.下面有关方法覆盖说法不正确的是：(A )
+3.下面有关方法覆盖说法不正确的是：(B )
 A. 方法覆盖要求覆盖和被覆盖的方法有相同的名字，参数列以及返回值 
 B. 方法覆盖要求覆盖和被覆盖的方法必须具有相同的访问权限； 
 C. 覆盖的方法不能比被覆盖的方法抛出更多的异常 
 D. 覆盖的方法一定不能是private的 
 
-4. 下面代码段中：(C )
+4. 下面代码段中：(A )
 String String=”String”;    
 System.out.println(String);
 A. String  B.不知道  C. 编译出错 D. 运行出错
 
-6.关于被私有保护访问控制符protected修饰的成员变量，以下说法正确的是? ( B )
+6.关于被私有保护访问控制符protected修饰的成员变量，以下说法正确的是? ( A )
 A．可以被三种类所引用：该类自身、与它在同一个包中的其他类、在其他包中的该类的子类  
 B. 可以被两种类访问和引用：该类本身、该类的所有子类 
 C. 只能被该类自身所访问和修改 
@@ -63,7 +63,7 @@ B. 数组是无序数据的集合
 C. 抽象类可以实例化 
 D. 类成员数据必须是公有的 
 
-11.在创建对象时必须（D ）
+11.在创建对象时必须（C ）
 A) 先声明对象，然后才能使用对象 
 B) 先声明对象，为对象分配内存空间，然后才能使用对象 
 C) 先声明对象，为对象分配内存空间，对对象初始化，然后才能使用对象 
@@ -79,7 +79,7 @@ D) 上述说法都不对
 A) 安全性            B) 多线(程)性           
     C)跨平台             D) 可移植 
 
-15.关于以下application的说明，正确的是（ A ）
+15.关于以下application的说明，正确的是（ C ）
 1．  class   StaticStuff
 2． {  
 3．   static  int  x=10； 
@@ -114,7 +114,7 @@ B、 10行不能通过编译，因为x是私有静态变量
 C、 程序通过编译，输出结果为：x=103 
 D、 程序通过编译，输出结果为：x=102 
 
-17.以下选项中循环结构合法的是（ D ）
+17.以下选项中循环结构合法的是（ C ）
 A、while (int  i<7) 
 {     i++;
      System.out.println(“i is “+i); 
@@ -132,14 +132,14 @@ System.out.println(“j  is “+ j + “k  is”+ k);
 D、  int  j=0; 
 do{
       System.out.println( “j  is “+j++); 
-      if (j = = 3) {continue  loop;}
+      if (j = = 3) {continue  loop;}//标记循环，不行
  }while  (j<10);
 
 18.类Test1定义如下： 1．public  class  Test1{ 
 2．   public  float  aMethod（float  a，float  b）{return ..;   }  
 3．     
 4．}        
-将以下哪种方法插入行3是不合法的。（   C   ）
+将以下哪种方法插入行3是不合法的。（   B   ）
 A、public  float  aMethod（float  a， float  b，float  c）{ return ..;  }
 B、public  float  aMethod（float  c，float d）{ return.. ;  }
 C、public  int  aMethod（int  a， int b）{ return ..;  }
@@ -153,7 +153,7 @@ D、private  float  aMethod（int a，int b，int c）{ return ..;  }
 5． public  class  Test2  extends  Test1{ 
 6． 
 7．} 
-将以下哪种方法插入行6是不合法的。（  A  ）
+将以下哪种方法插入行6是不合法的。（  B  ）
 A、float  aMethod（float  a，float  b）{ } 
 B、public  int  aMethod（int a，int b）throws  Exception{ } 
 C、public  float  aMethod（float  p，float q）{ } 
@@ -169,7 +169,7 @@ D、public  int  aMethod（int a，int  b）throws IOException{ }
 A、行4与行6都将执行            B、行4执行，行6不执行 
 C、行6执行，行4不执行         C、行4、行6都不执行 
 
-22. 有以下方法的定义，请选择该方法的返回类型（ B ）。
+22. 有以下方法的定义，请选择该方法的返回类型（ D ）。
 ReturnType  method(byte x, double y)                            {
     return  (short)x/y*2;
 }
@@ -188,13 +188,13 @@ D、 interface  B
 1.    A  a0=new  A();
 2.    A  a1 =new  B();
 3.    A  a2=new  C();
-问以下哪个说法是正确的？（   B   ）
+问以下哪个说法是正确的？（   D   ）
 A、只有第1行能通过编译  
 B、第1、2行能通过编译，但第3行编译出错 
 C、第1、2、3行能通过编译，但第2、3行运行时出错 
 D、第1行、第2行和第3行的声明都是正确的  
 
-26. 假设A类有如下定义，设a是A类的一个实例，下列语句调用哪个是错误的？（ A ）
+26. 假设A类有如下定义，设a是A类的一个实例，下列语句调用哪个是错误的？（ C ）
 class  A
 {     int  i;
       static  String  s;
@@ -206,7 +206,7 @@ B、a.method1();
 C、A.method1(); 
 D、A.method2() 
 
-27. 以下关于继承的叙述正确的是（ D ）。
+27. 以下关于继承的叙述正确的是（ A ）。
 A、在Java中类只允许单一继承 
 B、在Java中一个类只能实现一个接口  
 C、在Java中一个类不能同时继承一个类和实现一个接口  
@@ -225,7 +225,7 @@ C、输出零           		 D、输出空
 29 在使用interface声明一个接口时，只可以使用（ D ）修饰符修饰该接口。
 A、private            B、protected         C、private  protected   D、public 
 
-30. 编译并运行以下程序，以下描述哪个选项是正确的（ D ）
+30. 编译并运行以下程序，以下描述哪个选项是正确的（ C ）
 1.  class  A{
 2.      protected  boolean  equals(){
 					// public boolean equals(Object obj)
@@ -274,7 +274,7 @@ B．x[9]未定义
 C．x[10]为0 
 D．x[0]为空 
 
-35. 关于以下程序段，正确的说法是（ D ）
+35. 关于以下程序段，正确的说法是（ C ）
 1．  String  s1=“a”+“b”; 
 2．   String  s2=new  String（s1）； 
 3．    if（s1= =s2） 
@@ -314,7 +314,7 @@ A．2 2 2     B．2 3 3    C．2 2 3   D．3 4 4
        A、2与6               B、3与8 
        C、3与5               D、2与8 （++i先运算再取值）
 
-40. 下面哪一个循环会导致死循环？（ D ）
+40. 下面哪一个循环会导致死循环？（ C ）
  A、for (int k = 0; k < 0; k++)     
  B、for (int k = 10; k > 0; k--) 
  C、for (int k = 0; k < 10; k--)  
@@ -338,14 +338,14 @@ for ( inti = 0; i< 4; i++ ){
   if ( i == 2) break;                             
   total += i;
 }
-则执行完该程序段后total的值为：（  B   ）。
+则执行完该程序段后total的值为：（  A   ）。
 A.0         B.1        C.3   D.6 
 
 44.如果希望某个变量只可以被类本身访问和调用,则应该使用下列哪一种访问控制修饰（ A ）。
     A、private                    B、protected 
     C、private  protected         D、public 
 
-47. 指出下列程序运行的结果 （ D ）
+47. 指出下列程序运行的结果 （ B ）
 public class Example{  
     String str=new String("good");  
      char[] ch = {'a','b','c'};  
@@ -365,7 +365,7 @@ B、 good and gbc
 C、 test ok and abc  
 D、 test ok and gbc  
 
-49.下面语句在编译时出现警告或错误的是( D )
+49.下面语句在编译时出现警告或错误的是(A B D )
 A. float f=3.14;    
 B. char c=”c”;     
 C. Boolean b=null;    Boolean 包装类没问题
@@ -409,7 +409,7 @@ B）String a2[]={"string1","string1","string1"};
 C）String a3[]=new String(3); 
 D）int[][] a4=new int[3][3]; 
 
-53. 下面的方法，当输入为2的时候返回值是多少?（ ）
+53. 下面的方法，当输入为2的时候返回值是多少?（ D ）
     public int getValue(int i) {
         int result = 0;
         switch (i) {
@@ -425,7 +425,7 @@ D）int[][] a4=new int[3][3];
 A）0      B）2        C）4         D）10 
 
 59. 下面是People和Child类的定义和构造方法，每个构造方法都输出编号。在执行new
-Child("mike")的时候都有哪些构造方法被顺序调用？请选择输出结果 ( C )
+Child("mike")的时候都有哪些构造方法被顺序调用？请选择输出结果 ( D )
 class People {
        String name;
        public People() {  System.out.print(1); }
