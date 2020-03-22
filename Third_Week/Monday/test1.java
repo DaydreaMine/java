@@ -1,4 +1,5 @@
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
 public class test1 {
 	public static void main(String[] args) throws UnsupportedEncodingException {
@@ -57,7 +58,7 @@ public class test1 {
 		byte[] R = Q.getBytes("GBK");
 		String W = new String(R, "UTF-8");
 		System.out.println("转换成字符串 "+Q);
-		System.out.println("转换成字节数组 "+R);
+		System.out.println("转换成字节数组 "+Arrays.toString(R));
 		System.out.println("转换成字节数组 "+W);
 	}
 }

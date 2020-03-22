@@ -16,7 +16,7 @@ public class Student {
 	static class student{
 		private String name ;
 		private int id ;
-		private int score;
+		private double score;
 			
 		public String getName() {
 			return name;
@@ -30,19 +30,14 @@ public class Student {
 		public void setId(int id) {
 			this.id = id;
 		}
-		public int getScore() {
+		public double getScore() {
 			return score;
 		}
 		public void setScore(int score) {
 			this.score = score;
 		}
 
-		public student(String name, int id, int score) {
-			super();
-			this.name = name;
-			this.id = id;
-			this.score = score;
-			}
+
 			
 	    public String tostring() {
 	    	return "学号"+id+"姓名"+name+"成绩"+score;
@@ -50,6 +45,20 @@ public class Student {
 			
 	}
 	
+	
+
+
+
+
+	public Student(int i, String string, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+
+
 	public static void init_Data() {		
 		Random random = new Random();
 		for(int i = 0 ;i<40;i++) {
