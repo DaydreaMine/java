@@ -9,9 +9,9 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Array<Integer> ar1 = new Array<Integer>(new Integer[] {1,2,3,4,5,});
+		Array<Integer> ar1 = new Array<Integer>(new Integer[] {1,2,99,4,51,});
 		
-		Array<Double> ar2 = new Array<Double>(new Double[] {3.2,3.3,3.1,4.5,4.8});
+		Array<Double> ar2 = new Array<Double>(new Double[] {3.2,3.3,100.1,4.5,4.8});
 		
 		ar1.max();
 		ar1.min();
