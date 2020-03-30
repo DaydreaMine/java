@@ -20,10 +20,13 @@ public class addThread implements Runnable {
                         e.printStackTrace();
                     }
                 } else {
-                    myThread.i++;
-                    System.out.println(Thread.currentThread().getName()+myThread.i);
-                    myThread.flag = !myThread.flag;
-                    myThread.notify();
+                    if (myThread.countDownLatch > 0) {
+                        myThread.i++;
+                        System.out.println(Thread.currentThread().getName() + myThread.i);
+                        myThread.flag = !myThread.flag;
+                        myThread.notify();
+                        myThread.countDownLatch.coutDown();
+                    }
                 }
             }
 
