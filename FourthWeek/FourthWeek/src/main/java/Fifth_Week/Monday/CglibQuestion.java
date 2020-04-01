@@ -29,6 +29,7 @@ wait()和 notify(),jion()
 
 6.Java 中新的 Lock 接口相对于同步代码块（synchronized block）有什么优势？如果让你实现一个高性能缓存，支持并发读取和单一写入，你如何保证数据完整性。
 它为读和写提供两个单独的锁，可以让你构建高性能数据结构，比如 ConcurrentHashMap 和条件阻塞。
+大数据量储存用lock，
 
 7.Java 中 wait 和 sleep 方法有什么区别？
 两者主要的区别就是等待释放锁。sleep方法在等待时不会释放任何锁。wait 方法多用于线程间通信，而 sleep 只是在执行时暂停。
