@@ -72,9 +72,12 @@ public class GameController implements Runnable, KeyListener {
                 this.grid.init();
                 restart = false;
             }else {
-                this.grid.nextRound();
+               this.running = this.grid.nextRound();
             }
             this.gameView.draw();
+        }
+        if (!running){
+            this.gameView.showGameOverMessage();
         }
     }
 
