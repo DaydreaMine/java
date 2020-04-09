@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class Grid {
 
-    public final boolean status[][];
     private final int width;
     private final int height;
 
@@ -19,14 +18,10 @@ public class Grid {
 
         this.width = width;
         this.height = height;
-        status = new boolean[width][height];
         init();
     }
 
     public void init() {  //初始化蛇的朝向
-        for (int i = 0; i < width; ++i) {
-            Arrays.fill(status[i], false);
-        }
         snakeDirection = Direction.LEFT;
         initSnake();
         createFood();
@@ -41,7 +36,6 @@ public class Grid {
         snake = new Snake();
         for (int i = 0; i < (width / 3); i++) {
             snake.getBody().addLast(new Node((width / 2) + i, height / 2));
-            status [(width / 2) + i][height / 2]=true;
         }
         return snake;
     }
@@ -57,7 +51,7 @@ public class Grid {
             x = (int) (Math.random() * width);
             y = (int) (Math.random() * height);
             food = new Node(x, y);
-        } while (snake.getBody().equals(food));
+        } while (!SnakeTouch(food));
         return food;
     }
 
@@ -92,14 +86,6 @@ public class Grid {
         return x >= 0 && x < width && y >= 0 && y < height ;
     }
 
-    private void dispose(Node node) {
-        status[node.getX()][node.getY()] = false;
-    }
-
-    private void occupy(Node node) {
-        status[node.getX()][node.getY()] = true;
-    }
-
 
     public boolean isFood(Node area) {
         int x = area.getX(), y = area.getY();
@@ -124,7 +110,7 @@ public class Grid {
 
     public boolean SnakeTouch(Node area) {
         int a = 0;
-        for (int i = 2; i < snake.getBody().size() - 1; i++) {
+        for (int i = 1; i < snake.getBody().size() - 1; i++) {
             if (snake.getBody().get(i).getX()==area.getX()&&snake.getBody().get(i).getY()==area.getY()) {
                 a++;
             }
