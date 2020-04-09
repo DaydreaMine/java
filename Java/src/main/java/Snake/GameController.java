@@ -7,8 +7,10 @@ public class GameController implements Runnable, KeyListener {
     private final Grid grid;
     private final GameView gameView;
 
+
     boolean running;
     boolean restart = false;
+    boolean pause = false;
 
     public GameController(Grid grid, GameView gameView) {
         this.grid = grid;
@@ -18,8 +20,7 @@ public class GameController implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        int keyCode = e.getKeyCode();
-
+        Integer keyCode = e.getKeyCode();
         switch (keyCode) {
             case KeyEvent.VK_UP:
                 grid.changeDirection(Direction.UP);
@@ -37,23 +38,42 @@ public class GameController implements Runnable, KeyListener {
         }
 
         // your code here：处理回车键，重新开始游戏
-        if (!running) {
+        if (running != true) {
             switch (keyCode) {
                 case KeyEvent.VK_ENTER:
                     restart = true;
                     running = true;
+                    pause = false;
                     new Thread(this).start();
                     break;
                 case KeyEvent.VK_SPACE:
                     running = true;
+                    pause=false;
                     new Thread(this).start();
                     break;
+                default:
             }
+        } else if (keyCode.equals(KeyEvent.VK_SPACE)) {
+            running = false;
+            pause=true;
+            new Thread(this).start();
+//            System.out.println(running);
         }
-        else {
-            if (keyCode == KeyEvent.VK_SPACE) {
-                running = false;
-            }
+
+        switch (keyCode) {
+            case KeyEvent.VK_1:
+                Settings.setDefaultMoveInterval(50);
+                break;
+            case KeyEvent.VK_2:
+                Settings.setDefaultMoveInterval(100);
+                break;
+            case KeyEvent.VK_3:
+                Settings.setDefaultMoveInterval(200);
+                break;
+            case KeyEvent.VK_4:
+                Settings.setDefaultMoveInterval(400);
+                break;
+            default:
         }
     }
 
@@ -64,21 +84,30 @@ public class GameController implements Runnable, KeyListener {
 
         while (running) {
             try {
-                Thread.sleep(Settings.DEFAULT_MOVE_INTERVAL);
+                Thread.sleep(Settings.getDefaultMoveInterval());
             } catch (InterruptedException e) {
                 break;
             }
-            if(restart){
+            if (restart) {
                 this.grid.init();
                 restart = false;
-            }else {
-               this.running = this.grid.nextRound();
+            } else {
+                if (this.grid.nextRound()&&!pause){
+                    running = true;
+                }else{
+                    running=false;
+                }
             }
             this.gameView.draw();
         }
-        if (!running){
-            this.gameView.showGameOverMessage();
+        if (!running) {
+            if (pause==false){
+                this.gameView.showGameOverMessage();
+            }else {
+                this.gameView.showGameOverMessage1();
+            }
         }
+
     }
 
     @Override

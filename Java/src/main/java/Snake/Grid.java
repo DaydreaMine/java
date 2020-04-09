@@ -11,6 +11,7 @@ public class Grid {
     private Snake snake;
     private Node food;
 
+
     // 初始方向设置为向左
     private Direction snakeDirection = Direction.LEFT;
 
@@ -66,6 +67,7 @@ public class Grid {
         if (SnakeTouch(snake.getHead()) && validPosition(snake.getHead())) {
             if (isFood(snake.getHead())) {
                 snake.addTail(removelast);
+
                 createFood();
             }
             return true;

@@ -1,7 +1,10 @@
 package Snake;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class GameView {
 
@@ -25,6 +28,10 @@ public class GameView {
 
     public void showGameOverMessage() {
         JOptionPane.showMessageDialog(null, "游戏结束", "游戏结束", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void showGameOverMessage1() {
+        JOptionPane.showMessageDialog(null, "游戏暂停", "游戏暂停", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
@@ -86,9 +93,14 @@ public class GameView {
      *
      */
     private void drawCircle(Graphics graphics, Node squareArea, Color color) {
-        graphics.setColor(color);
         int size = Settings.DEFAULT_NODE_SIZE;
+
+        graphics.setColor(color);
         graphics.fillOval(squareArea.getX() * size, squareArea.getY() * size, size, size);
+
+//        Toolkit toolkit = Toolkit.getDefaultToolkit();
+//        Image image = toolkit.getImage("Users/user/Pictures/asd.jpg");
+//        graphics.drawImage(image,squareArea.getX() * size, squareArea.getY() * size, size, size,null);
     }
 
     public JPanel getCanvas() {
